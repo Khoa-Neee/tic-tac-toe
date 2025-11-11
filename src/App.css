@@ -1,38 +1,110 @@
-.App {
+/* Căn giữa tổng thể */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* --- Layout mới --- */
+.game-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.right-panel {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 240px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #7ed957;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #5ecb4e;
+}
+
+/* Bàn cờ */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.square {
+  background-color: white;
+  border: 2px solid #7ed957;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.square:hover {
+  background-color: #d4fc79;
+}
+
+.square.winning {
+  background-color: #ffeb3b !important;
+}
+
+/* Danh sách bước đi */
+.moves {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.moves li {
+  margin-bottom: 6px;
 }
